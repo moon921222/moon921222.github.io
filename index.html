@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Final exam of WP</title>
-    <link rel="stylesheet" href="style.css">
-     <script>
-       function myFunction () {
-          document.getElementById("click").innerHTML = "ヽ(✿ﾟ▽ﾟ)ノ";
-        }
-      </script>
-  </head>
-  <body>
-    <img src="./100.png" alt="This is the logo" width="300" height="500">
-    <br>
-    <div>
-      <h1>This is my index</h1>
-      <p id="click">Welcome to my Github</p>
-      <button type="button" onclick="myFunction()">Say Hi!</button>
-     </div>
-     <div class="no1">
-       <h2>Today's weather report</h2>
-       <ul>
-       <a href="#"
-          onclick="open('https://www.cwb.gov.tw/V8/C/W/Town/Town.html?TID=6800200', 
-                   'Weather', config='height=300,width=200');"><li>Press to see</li></a>
-       </ul>
-     </div>
-    </body>
-  </html>
+	<head>
+    		<meta charset="utf-8">
+    		<title>Final exam of WP</title>
+    		<link rel="stylesheet" href="style.css">
+		<meta name="web_description" content="This is my web">
+     		<script>
+			function myFunction () {
+        			document.getElementById("click").innerHTML = "ヽ(✿ﾟ▽ﾟ)ノ";
+        		}
+     		 </script>
+  	</head>
+  	<body>
+    		<div class="title">
+      		<h1>This is my index</h1>
+      		<p id="click">Welcome to my Web</p>
+      		<button type="button" onclick="myFunction()">Say Hi!</button>
+     		</div>
+
+    		<div>
+			<table border="3" width="100%">
+
+			<hr style="border: 3px solid yellow;">
+
+				<tr>
+					<th>Name</th>
+					<th>Introduction</th>
+					<th>Image</th>
+					<th>Link</th>
+				</tr>
+				<tr>
+					<td>梗圖產生器</td>
+					<td>來作梗圖囉!</td>
+					<td><img src="./100.png" alt="This is the meme cat" width="300" height="400"></td>
+					<td><a href="https://memes.tw/maker/template/13807" target="_blank">貓貓梗圖</a></td>
+				</tr>
+				<tr>
+					<td>大胖橘</td>
+					<td>75</td>
+					<td><img src="../133.jpg" alt="This is cat1" width="100%" height="100%"></td>
+					<td><a href="../133.jpg" target="_blank">大胖橘</a></td>
+				</tr>
+				<tr>
+					<td>圓滾滾</td>
+					<td>56</td>
+					<td><img src="../133.jpg" alt="This is cat1" width="100%" height="100%"></td>
+					<td><a href="../133.jpg" target="_blank">圓滾滾</a></td>
+				</tr>	
+		<div class="wea">		
+      	 	<h2>Today's weather report</h2>
+      		 <ul>
+      		 <a href="#"
+         			 onclick="open('https://www.cwb.gov.tw/V8/C/W/Town/Town.html?TID=6800200', 
+                  	 'Weather', config='height=300,width=200');"><li>Press to see</li></a>
+      		 </ul>
+		</div>
+    	 	</div>
+    	</body>
+ </html>
+
+    		
