@@ -1,62 +1,98 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    		<meta charset="utf-8">
-    		<title>Final exam of WP</title>
-    		<link rel="stylesheet" href="style.css">
-		<meta name="web_description" content="This is my web">
-     		<script>
-			function myFunction () {
-        			document.getElementById("click").innerHTML = "ヽ(✿ﾟ▽ﾟ)ノ";
-        		}
-     		 </script>
+		<meta charset="utf-8">
+		<title>Lottery Game</title>
+		<link rel="stylesheet" href="style.css">
   	</head>
   	<body>
-    		<div class="title">
-      		<h1>This is my index</h1>
-      		<p id="click">Welcome to my Web</p>
-      		<button type="button" onclick="myFunction()">Say Hi!</button>
-     		</div>
+    		<h1><center>樂透遊戲</center></h1>
 
-    		<div>
-			<table border="3" width="100%">
+    	<div id="instructions">
+      	<h2>遊戲規則</h2>
+      	<p>請輸入三個不重複的數字（範圍：1~10），然後按下「開獎」按鈕。</p>
+    	</div>
+    
+    	<div id="guessnumber">
+      	<label for="number1">First Number:</label>
+      	<input type="number" id="number1" min="1" max="10">
+     	 	<br>
+      	<label for="number2">Second Number:</label>
+   	   	<input type="number" id="number2" min="1" max="10">
+      	<br>
+      	<label for="number3">Third Number:</label>
+      	<input type="number" id="number3" min="1" max="10">
+      	<br>
+      	<button type="button" onclick="startGame()">開獎</button>
+      	<button type="button" onclick="resetGame()">重新開始</button>
+    	</div>
 
-			<hr style="border: 3px solid yellow;">
+    	<div id="result"></div>
 
-				<tr>
-					<th>Name</th>
-					<th>Introduction</th>
-					<th>Image</th>
-					<th>Link</th>
-				</tr>
-				<tr>
-					<td>梗圖產生器</td>
-					<td>來作梗圖囉!</td>
-					<td><img src="./100.png" alt="This is the meme cat" width="300" height="400"></td>
-					<td><a href="https://memes.tw/maker/template/13807" target="_blank">貓貓梗圖</a></td>
-				</tr>
-				<tr>
-					<td>大胖橘</td>
-					<td>75</td>
-					<td><img src="../133.jpg" alt="This is cat1" width="100%" height="100%"></td>
-					<td><a href="../133.jpg" target="_blank">大胖橘</a></td>
-				</tr>
-				<tr>
-					<td>圓滾滾</td>
-					<td>56</td>
-					<td><img src="../133.jpg" alt="This is cat1" width="100%" height="100%"></td>
-					<td><a href="../133.jpg" target="_blank">圓滾滾</a></td>
-				</tr>	
-		<div class="wea">		
-      	 	<h2>Today's weather report</h2>
-      		 <ul>
-      		 <a href="#"
-         			 onclick="open('https://www.cwb.gov.tw/V8/C/W/Town/Town.html?TID=6800200', 
-                  	 'Weather', config='height=300,width=200');"><li>Press to see</li></a>
-      		 </ul>
-		</div>
-    	 	</div>
-    	</body>
- </html>
+    	<script>
+      	function startGame() {
+        		var num1 = document.getElementById("number1").value;
+        		var num2 = document.getElementById("number2").value;
+        		var num3 = document.getElementById("number3").value;
 
-    		
+        		if (isNaN(num1) || isNaN(num2) || isNaN(num3) || num1 < 1 || num1 > 10 || num2 < 1 || num2 > 10 || num3 < 1 || num3 > 10 || num1 === num2 || num1 === num3 || num2 === num3) {
+          			alert("請輸入三個不重複的數字！");
+          			resetGame();
+          			return;
+        		}
+        
+        		var winNum = prizeNum();
+        		var countNum = checkNum(num1, num2, num3, winNum);
+       	 	var prize = "";
+       	 	var money = "";
+
+        		if (countNum === 3) {
+          			prize = "中頭獎了!!";
+          			money = "1000000";
+        		} else if (countNum === 2) {
+          			prize = "中貳獎了!!";
+          			money = "500000";
+       		} else if (countNum === 1) {
+          			prize = "中參獎了!!";
+          			money = "100000";
+        		} else {
+          			prize = "沒中獎QAQ";
+				money = "0"
+        		}
+
+        		document.getElementById("result").innerHTML = prize + " 獲得獎金 " + money;
+      	}
+
+      	function prizeNum() {
+        		var win = [];
+			var random;
+
+        		while (win.length < 3) {
+          			random = Math.floor(Math.random() * 10) + 1;
+	
+          			if (win.indexOf(random) === -1) {
+            			win.push(random);
+          			}		
+       		}
+       		return win;
+      		}
+
+      	function checkNum(num1, num2, num3, winNum) {
+        		var count = 0;
+
+        		if (winNum.includes(parseInt(num1))) {count++;}  
+			if (winNum.includes(parseInt(num2))) {count++;}
+			if (winNum.includes(parseInt(num3))) {count++;}
+
+        		return count;
+      	}
+
+      	function resetGame() {
+        		document.getElementById("number1").value = "";
+        		document.getElementById("number2").value = "";
+        		document.getElementById("number3").value = "";
+        		document.getElementById("result").innerHTML = "";
+      	}
+    		</script>
+  	</body>
+</html>
