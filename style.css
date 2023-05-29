@@ -2,7 +2,7 @@ body {
   background: -webkit-linear-gradient(-8deg, rgb(255, 179, 255), rgb(209, 187, 255))
 }
 
-div {
+div:first-child {
   color: #ffffff;
   padding: 16px;
   text-align: center;
@@ -12,6 +12,6 @@ div:hover {
   background-color: #7fd2f5;
 }
 
-.no1 {
+div:second-child {
   text-align: right top;
 }
