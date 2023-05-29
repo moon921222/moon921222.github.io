@@ -1,34 +1,49 @@
 body {
-  background: -webkit-linear-gradient(-8deg, rgb(255, 179, 255), rgb(209, 187, 255))
+	background: -webkit-linear-gradient(-8deg, rgb(255, 179, 255), rgb(209, 187, 255))
 }
 
-div {
-  color: #ffffff;
-  padding: 16px;
-  text-align: center;
+h1 {
+  	color: #46A3FF;
+ 	text-align: center;
 }
 
-.wea {
-	text-align: left;
+#instructions {
+  	background-color: #f0f0f0;
+  	padding: 10px;
+  	margin-bottom: 20px;
 }
 
-.title:hover {
-  background-color: #66B3FF;
+#guessnumber {
+  	text-align: center;
+  	margin-bottom: 20px;
 }
 
-th, td { 
-	text-align: center;
-	padding:12px;
+#result {
+  	font-weight: bold;
+  	text-align: center;
+  	margin-bottom: 20px;
+	color: #9D9D9D;
 }
 
-tr:nth-child(1) {
-	background-color: #D1CDDA;
+
+button {
+  background-color: #6FB7B7;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
 }
 
-tr:nth-child(3) {
-	background-color: #AEE1CD;
+button:hover {
+  background-color: #408080;
 }
 
-tr:nth-child(even) {
-	background-color: #FFE681;
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
