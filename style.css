@@ -11,3 +11,7 @@ div {
 div:hover {
   background-color: #7fd2f5;
 }
+
+.no1 {
+  text-align: right top;
+}
